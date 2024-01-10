@@ -8,7 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -26,7 +26,7 @@ public class Property {
 	@EqualsAndHashCode.Include
     private Integer id;
     
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "id_address")
 	@NotNull(message = "The address is required. ")
     private Address address;

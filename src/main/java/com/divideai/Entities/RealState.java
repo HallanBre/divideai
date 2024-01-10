@@ -8,7 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -38,7 +37,7 @@ public class RealState {
     @Column(name = "cnpj")
     private String cnpj;
     
-    @OneToMany
+    @ManyToOne
 	@JoinColumn(name = "id_address")
 	@NotNull(message = "The address is required. ")
     private Address address;
