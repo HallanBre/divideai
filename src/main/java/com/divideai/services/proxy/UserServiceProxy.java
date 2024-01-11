@@ -28,4 +28,9 @@ public class UserServiceProxy implements UserService {
 		return userService.findBy(id);
 	}
 
+	@Override
+	public User login(String email, String password) {
+		return userService.login(email, password);
+	}
+
 }

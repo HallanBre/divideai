@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.divideai.Entities.User;
-import com.divideai.Repository.UserRepository;
+import com.divideai.repository.UserRepository;
 import com.divideai.services.UserService;
 import com.google.common.base.Preconditions;
 
@@ -29,6 +29,15 @@ public class UserServiceImpl implements UserService {
 	public User findBy(Integer id) {
 		Preconditions.checkNotNull(id, "The id is required to find user. ");
 		return repository.findBy(id);
+	}
+
+	@Override
+	public User login(String email, String password) {
+		Preconditions.checkNotNull(email, "The email is required for login .");
+		Preconditions.checkNotNull(password, "The password is required for login. ");
+		User findedUser = repository.login(email, password);
+		Preconditions.checkNotNull(findedUser, "The password or email is incorrect. ");
+		return findedUser;
 	}
 
 }

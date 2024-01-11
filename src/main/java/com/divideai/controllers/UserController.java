@@ -41,5 +41,5 @@ public class UserController {
 		User deletedUser = userService.deleteBy(id);
 		return ResponseEntity.ok(deletedUser);
 	}
-
+	
 }
