@@ -20,4 +20,12 @@ public class ProfileServiceImpl implements ProfileService {
 		return profilesRepository.save(profile);
 	}
 
+	@Override
+	public Profile getBy(Integer idUser) {
+		Preconditions.checkNotNull(idUser, "The user is required to find profile. ");
+		Profile findedProfile = profilesRepository.getBy(idUser);
+		Preconditions.checkNotNull(findedProfile, "The current user does not have a profile. ");
+		return findedProfile;
+	}
+
 }

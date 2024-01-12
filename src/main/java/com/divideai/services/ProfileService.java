@@ -12,5 +12,9 @@ public interface ProfileService {
 	public Profile save(
 			@NotNull(message = "The profile is required. ")
 			Profile profile);
+	
+	public Profile getBy(
+			@NotNull(message = "The profile is required. ")
+			Integer idUser);
 
 }
