@@ -27,6 +27,6 @@ public class LoginController {
 		String email = login.getEmail();
 	    String password = login.getPassword();
 	    User foundUser = userService.login(email, password);
-		return ResponseEntity.ok(URI.create("/user/id/" + foundUser.getId()));
+		return ResponseEntity.ok(URI.create("/users/id/" + foundUser.getId()));
 	}
 }
