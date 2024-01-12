@@ -27,7 +27,7 @@ public class UserController {
 	@PostMapping
 	public ResponseEntity<?> insert(@RequestBody User user) {
 		User savedUser = userService.save(user);
-		return ResponseEntity.created(URI.create("/user/id/" + savedUser.getId())).build();
+		return ResponseEntity.created(URI.create("/users/id/" + savedUser.getId())).build();
 	}
 	
 	@GetMapping("/id/{id}")
